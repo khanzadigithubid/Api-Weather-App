@@ -1,0 +1,292 @@
+/* General styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #1a202c, #2d3748, #4a5568, #2c5282, #edf2f7); /* Dark gradient background */
+  color: #e2e8f0; /* Light text color */
+  padding: 20px;
+  transition: background-color 0.5s ease-in-out; /* Smooth background color transition */
+}
+
+/* Header */
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #63b3ed; /* Lighter blue for header */
+  animation: fadeIn 1s ease-in-out; /* Animation for header */
+}
+
+/* Input */
+.input-group {
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  border: 2px solid #4a5568; /* Dark grey border */
+  border-radius: 5px;
+  background-color: #2d3748; /* Dark input background */
+  color: #e2e8f0; /* Light text color */
+  transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Animated border and background on focus */
+}
+
+input[type="text"]:focus {
+  border-color: #63b3ed; /* Light blue when focused */
+  background-color: #4a5568; /* Slightly lighter background when focused */
+  box-shadow: 0 0 5px rgba(99, 184, 237, 0.5); /* Shadow effect on focus */
+}
+
+/* Button */
+.btn {
+  background-color: #2b6cb0; /* Darker blue for button */
+  color: #f7fafc; /* Light color for button text */
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Padding for button */
+  transition: background-color 0.3s ease-in-out, transform 0.2s; /* Add transform transition */
+}
+
+.btn:hover {
+  background-color: #2c5282; /* Darker blue for hover effect */
+  transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+/* Error message styling */
+#loading {
+  font-size: 1.2rem;
+  color: #63b3ed; /* Lighter blue loading text */
+  transition: color 0.5s ease-in-out;
+  animation: pulse 1.5s infinite; /* Pulsing animation */
+}
+
+#errorMessage {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #f56565; /* Light red for error messages */
+  background-color: #fc8181; /* Light red background for error */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Weather card container */
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Weather card */
+.card {
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  max-width: 300px;
+  text-align: center;
+  transition: background-color 0.5s ease-in-out, transform 0.3s ease; /* Add transform transition */
+  animation: slideIn 0.5s ease; /* Slide in animation */
+}
+
+/* Dynamic weather card background based on weather */
+.card.sunny {
+  background-color: #f6e05e; /* Bright yellow for sunny weather */
+  border: 2px solid #ecc94b; /* Golden border */
+}
+
+.card.sunny:hover {
+  background-color: #faf089; /* Lighter yellow on hover */
+  transform: scale(1.05); /* Scaling effect on hover */
+}
+
+.card.rainy {
+  background-color: #2b6cb0; /* Darker blue for rainy weather */
+  border: 2px solid #2c5282; /* Dark blue border */
+}
+
+.card.rainy:hover {
+  background-color: #3182ce; /* Brighter blue on hover */
+  transform: scale(1.05); /* Scaling effect on hover */
+}
+
+.card.cloudy {
+  background-color: #4a5568; /* Dark grey for cloudy weather */
+  border: 2px solid #2d3748; /* Darker grey border */
+}
+
+.card.cloudy:hover {
+  background-color: #718096; /* Lighter grey on hover */
+  transform: scale(1.05); /* Scaling effect on hover */
+}
+
+.card.snowy {
+  background-color: #edf2f7; /* Light grey for snowy weather */
+  border: 2px solid #e2e8f0; /* Grey border */
+}
+
+.card.snowy:hover {
+  background-color: #f7fafc; /* Even lighter grey on hover */
+  transform: scale(1.05); /* Scaling effect on hover */
+}
+
+.card.stormy {
+  background-color: #1a202c; /* Very dark grey for stormy weather */
+  border: 2px solid #2d3748; /* Darker grey border */
+}
+
+.card.stormy:hover {
+  background-color: #2d3748; /* Lighter dark grey on hover */
+  transform: scale(1.05); /* Scaling effect on hover */
+}
+
+.card.windy {
+  background-color: #48bb78; /* Dark green for windy weather */
+  border: 2px solid #38a169; /* Darker green border */
+}
+
+.card.windy:hover {
+  background-color: #81e6d9; /* Lighter green on hover */
+  transform: scale(1.05); /* Scaling effect on hover */
+}
+
+.card.foggy {
+  background-color: #cbd5e0; /* Light grey for foggy weather */
+  border: 2px solid #a0aec0; /* Grey border */
+}
+
+.card.foggy:hover {
+  background-color: #e2e8f0; /* Lighter grey on hover */
+  transform: scale(1.05); /* Scaling effect on hover */
+}
+
+.card.hazy {
+  background-color: #f6ad55; /* Dark orange for hazy weather */
+  border: 2px solid #ed8936; /* Darker orange border */
+}
+
+.card.hazy:hover {
+  background-color: #fbd38d; /* Lighter orange on hover */
+  transform: scale(1.05); /* Scaling effect on hover */
+}
+
+/* Default card style */
+.card.default {
+  background-color: #2d3748; /* Default dark background */
+}
+
+/* City and weather details */
+.city {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #63b3ed; /* Lighter blue for city name */
+}
+
+.weather {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #90cdf4; /* Light blue for weather condition */
+  margin-bottom: 10px;
+}
+
+.temp {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffb74d; /* Bright orange for temperature */
+  margin-bottom: 20px;
+  transition: color 0.5s ease-in-out;
+}
+
+.temp:hover {
+  color: #f44336; /* Red on hover for temperature text */
+}
+
+/* Min and Max temperatures */
+.minmaxContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.min, .max {
+  text-align: center;
+}
+
+.minHeading, .maxHeading {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #a0aec0; /* Light grey for min/max headings */
+}
+
+.minTemp, .maxTemp {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #68d391; /* Green for temperature values */
+  transition: color 0.5s ease-in-out;
+}
+
+.minTemp:hover, .maxTemp:hover {
+  color: #ff9800; /* Bright orange on hover for min/max temps */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .input-group {
+    width: 100%;
+  }
+
+  .temp {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .minmaxContainer {
+    flex-direction: column;
+  }
+
+  .temp {
+    font-size: 1.8rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
